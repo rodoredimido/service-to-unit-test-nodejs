@@ -1,0 +1,7 @@
+{
+  "NODE_ENV": "local",
+  "API_PORT": 3000,
+  "MIN_LOG_LEVEL": "trace",
+  "DATE_LOCALIZATION": "pt-BR",
+  "API_HOST": "localhost"
+}

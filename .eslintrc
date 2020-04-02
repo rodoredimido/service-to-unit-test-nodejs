@@ -1,0 +1,26 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true
+  },
+
+    "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+   "parserOptions": {
+     "ecmaVersion": 2018
+  },
+  "extends": ["standard"],
+  "plugins": ["json"],
+  "rules": {
+    "max-statements": ["error", { "max": 12 }],
+    "complexity": ["warn", 5],
+    "max-statements-per-line": ["warn", { "max": 1 }],
+    "max-nested-callbacks": ["error", { "max": 2 }], 
+    "max-depth": ["error", { "max": 2 }],
+    "max-params": ["warn", 3],
+    "no-prototype-builtins": "off"
+  }
+}
