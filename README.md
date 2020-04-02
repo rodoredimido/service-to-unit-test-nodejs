@@ -200,7 +200,7 @@ Foi criado Um logger com `Bristol`
 { "description": "Internal Server Error" }
 ```
 
-### **POST** /posts/:id
+### **PUT** /posts/:id
 - Aqui é a descrição de retorno do endpoint.
 **_payload_**
 ```json
