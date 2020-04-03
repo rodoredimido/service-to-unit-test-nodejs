@@ -1,6 +1,6 @@
 [
   {
-    "INVALID_REQUEST": {
+    "INVALID_PEYLOAD": {
       "status": 400,
       "body": {
         "code": 2,
