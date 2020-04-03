@@ -14,7 +14,7 @@ const addPosts = async ctx => {
   const { title, body, userId } = ctx.request.body
   logger.info('#addPosts, create a new posts: ',
     { paylodad: { title, body, userId } }, scope)
-
+  ctx.status = 201 
   ctx.body = await jsonPlaceHolder.addPost({ title, body, userId })
 }
 
