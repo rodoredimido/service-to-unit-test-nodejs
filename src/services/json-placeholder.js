@@ -36,11 +36,15 @@ const getUsers = async () =>
 const getPosts = async () =>
   request(optionsGet(`${baseUrl}/posts`))
 
-const addPost = async data =>
-  request(optionsPost(`${baseUrl}/posts`, data))
+const addPost = async data => {
+  if (!data.userId) throw Error('INVALID_PEYLOAD')
+  return request(optionsPost(`${baseUrl}/posts`, data))
+}
 
-const editPost = async (id, data) =>
-  request(optionsPUT(`${baseUrl}/posts/${id}`, data))
+const editPost = async (id, data) => {
+  if (!id) throw Error('INVALID_UPDATE')
+  return request(optionsPUT(`${baseUrl}/posts/${id}`, data))
+}
 
 module.exports = {
   getUsers,
