@@ -78,7 +78,7 @@ para exportar o relatorio de covertura, onde depois de executar o test gera o re
 $ npm run test  # é para rodar so os test unitarios.
 $ npm run cover # é para rodar os test unitarios e verificar a covertura do codigo.
 ```
-assim estão confgurados os script no `package.json` para os testes:
+Assim estão confgurados os script no `package.json` para os testes:
 ```json
 {
   "script": {
