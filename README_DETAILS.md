@@ -20,7 +20,7 @@ Tratamento de erros: Com o koajs, podemos ter um controle mais preciso quando as
 
 Excelente desempenho: comparado a outras estruturas, podemos ver que o koa está entre os mais rápidos, sem um núcleo simples e leve, não seria possível.
 
-# Montagem do Servidor
+# Criando o Servidor
   ```
     .
     ├── configs               # Dentro dessa pasta estão os arquivos contendo as constantes da aplicação.
@@ -36,8 +36,7 @@ Excelente desempenho: comparado a outras estruturas, podemos ver que o koa está
 
 [Aqui](https://www.taniarascia.com/unit-testing-in-javascript/) temos um exemplo de test Unitarios com Mocha.
 
-### Vantagens do teste de unidade
- 
+### Vantagens do testes unitarios 
 
 1. Fornece trabalho ágil; Como um procedimento ágil, permite detectar erros a tempo, para que você possa reescrever o código ou corrigir erros sem precisar voltar ao início e refazer o trabalho. Como os pequenos são feitos periodicamente e em embalagens pequenas. Tempo e custo decrescentes.
 
@@ -51,7 +50,7 @@ Excelente desempenho: comparado a outras estruturas, podemos ver que o koa está
 
 6. processo de depuração; Testes de unidade ajudam no processo de depuração. Quando um erro ou bug é encontrado no código, é necessário apenas decompor o trecho de código testado. Essa é uma das principais razões pelas quais os testes de unidade são feitos em pequenos pedaços de código, simplificando bastante a tarefa de solução de problemas.
 
-#### O diagrama a seguir esta o montagen dos test unitarios Feito neste sistema:
+#### No diagrama a seguir é a montagens dos test unitarios Feitos neste sistema:
 
 ```
     .
