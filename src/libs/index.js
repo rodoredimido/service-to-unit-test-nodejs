@@ -1,5 +1,5 @@
-const lazyLoadLogger = require('./logger')
+const logger = require('./logger')
 
 module.exports = {
-  logger: lazyLoadLogger.instance
+  logger
 }
