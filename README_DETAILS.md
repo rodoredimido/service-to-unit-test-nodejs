@@ -73,6 +73,12 @@ Excelente desempenho: comparado a outras estruturas, podemos ver que o koa está
 Para Verifiar a covertura do Codigo se usa a biblioteca [NYC](https://www.npmjs.com/package/nyc), onde a mesma e configurara para 
 para exportar o relatorio de covertura, onde depois de executar o test gera o relatorio na rota`coverage/lcov-report/index.html` 
 
+#### Para Rodar os test:
+```bash
+$ npm run test  # é para rodar so os test unitarios.
+$ npm run cover # é para rodar os test unitarios e verificar a covertura do codigo.
+```
+assim estão confgurados os script no `package.json` para os testes:
 ```json
 {
   "script": {
@@ -81,8 +87,4 @@ para exportar o relatorio de covertura, onde depois de executar o test gera o re
     "cover": "nyc npm test"
   }
 }
-```
-```bash
-$ npm run test  # é para rodar so os test unitarios.
-$ npm run cover # é para rodar os test unitarios e verificar a covertura do codigo.
 ```
