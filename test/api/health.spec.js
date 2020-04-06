@@ -4,7 +4,7 @@ describe('GET /health', () => {
   let request
 
   beforeEach(async () => {
-    request = await createServer()
+    request = await createServer.createServer()
   })
 
   it('Get an OK', async () => {

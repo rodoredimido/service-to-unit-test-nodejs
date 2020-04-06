@@ -4,7 +4,8 @@
       "status": 400,
       "body": {
         "code": 2,
-        "message": "invalid parameters for requisition"
+        "message": "invalid parameters for requisition",
+        "details": "anything"
       }
     }
   },

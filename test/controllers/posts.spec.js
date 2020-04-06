@@ -75,6 +75,7 @@ describe('#controller/posts ', () => {
         body: 'This is a test 1 test service',
         userId: 10
       }
+
       const ctx = {
         params: {
           id: 1
@@ -84,6 +85,7 @@ describe('#controller/posts ', () => {
         },
         body: {}
       }
+
       const mockPost = {
         ...payload,
         id: 1

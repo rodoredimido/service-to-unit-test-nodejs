@@ -15,7 +15,7 @@ const optionsPost = (url, data) => ({
   json: true,
   headers: {
     // eslint-disable-next-line quotes
-    "Content-type": "application/json; charset=UTF-8"
+    'Content-type': 'application/json; charset=UTF-8'
   }
 })
 

@@ -21,7 +21,6 @@ const addPosts = async ctx => {
 const editPosts = async ctx => {
   const { id } = ctx.params
   const { title, body, userId } = ctx.request.body
-  console.log(`#editPosts, Edit a posts with id ${id}: `)
   logger.info(`#editPosts, Edit a posts with id ${id}: `,
     { paylodad: { title, body, userId } }, scope)
   ctx.body = await jsonPlaceHolder.editPost(id, { title, body, userId })
