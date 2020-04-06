@@ -3,15 +3,23 @@
   "version": "1.0.0",
   "description": "Service for unit tests",
   "main": "index.js",
+  "config": {
+    "version": "**",
+    "folder": "**",
+    "file": "*@(.spec.js)"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server/index.js"
+    "start": "nodemon server/index.js",
+    "test": "cross-env NODE_ENV=test; mocha --require test/helpers \"@(src|test)/**/*@(.spec.js)\" --timeout 5000 --exit",
+    "cover": "nyc npm test",
+    "lint": "eslint --fix --ext .json,.js,.spec.js src test server"
   },
   "author": "Rodolfo Garcia",
   "license": "ISC",
   "dependencies": {
     "@koa/cors": "^3.0.0",
     "bristol": "^0.4.0",
+    "cross-env": "^7.0.2",
     "koa": "^2.11.0",
     "koa-async-validator": "^0.4.1",
     "koa-body": "^4.1.1",
@@ -19,6 +27,8 @@
     "koa-convert": "^1.2.0",
     "koa-jwt": "^3.6.0",
     "koa-router": "^8.0.8",
+    "lodash": "^4.17.15",
+    "lodash.clonedeep": "^4.5.0",
     "moment": "^2.24.0",
     "node-fetch": "^2.6.0",
     "palin": "^2.3.0",
@@ -42,5 +52,21 @@
     "sinon": "^9.0.1",
     "sinon-chai": "^3.5.0",
     "supertest": "^4.0.2"
+  },
+  "nyc": {
+    "sourceMap": false,
+    "instrument": true,
+    "cached": false,
+    "reporter": [
+      "text",
+      "lcov",
+      "cobertura"
+    ],
+    "include": [
+      "src/**/*.js"
+    ],
+    "exclude": [
+      "test/**/*"
+    ]
   }
 }

@@ -5,6 +5,7 @@
   "globals": {
     "it": true,
     "describe": true,
+    "context": true,
     "expect": true,
     "sinon": true,
     "before": true,

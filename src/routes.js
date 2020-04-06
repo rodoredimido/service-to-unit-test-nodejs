@@ -1,6 +1,8 @@
 const Router = require('koa-router')
 const { logger } = require('./libs')
 const { users, posts } = require('./controllers')
+const errorMiddleware = require('./middleware/erros')
+const errorMessage = require('./constants/error')
 
 const setRoutes = router => {
   router.get('/health', ctx => {
@@ -18,6 +20,7 @@ const setRoutes = router => {
 const createRouter = () => {
   logger.info('Create a routers', { scope: 'Router' })
   const router = new Router()
+  router.use(errorMiddleware(logger, errorMessage))
   setRoutes(router)
   return router
 }

@@ -1,0 +1,22 @@
+[
+  {
+    "INVALID_PEYLOAD": {
+      "status": 400,
+      "body": {
+        "code": 2,
+        "message": "invalid parameters for requisition",
+        "details": "anything"
+      }
+    }
+  },
+  {
+    "INVALID_UPDATE": {
+      "status": 400,
+      "body": {
+        "code": 3,
+        "message": "invalid parameters for requisition",
+        "details": "NEED ID FOR UPDATE DATA"
+      }
+    }
+  }
+]

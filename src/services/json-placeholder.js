@@ -15,7 +15,7 @@ const optionsPost = (url, data) => ({
   json: true,
   headers: {
     // eslint-disable-next-line quotes
-    "Content-type": "application/json; charset=UTF-8"
+    'Content-type': 'application/json; charset=UTF-8'
   }
 })
 
@@ -36,11 +36,15 @@ const getUsers = async () =>
 const getPosts = async () =>
   request(optionsGet(`${baseUrl}/posts`))
 
-const addPost = async data =>
-  request(optionsPost(`${baseUrl}/posts`, data))
+const addPost = async data => {
+  if (!data.userId) throw Error('INVALID_PEYLOAD')
+  return request(optionsPost(`${baseUrl}/posts`, data))
+}
 
-const editPost = async (id, data) =>
-  request(optionsPUT(`${baseUrl}/posts/${id}`, data))
+const editPost = async (id, data) => {
+  if (!id) throw Error('INVALID_UPDATE')
+  return request(optionsPUT(`${baseUrl}/posts/${id}`, data))
+}
 
 module.exports = {
   getUsers,
