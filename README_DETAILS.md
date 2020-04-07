@@ -23,12 +23,12 @@ Excelente desempenho: Comparado a outras estruturas, o koa está entre os mais r
 # Criando o Servidor
 ```
     .
-    ├── configs                     # Dentro dessa pasta estão os arquivos contendo as constantes da aplicação.
-    └── server                       # Arquivos contendo as configurações gerais do servidor da aplicação.
+    ├── configs                # Dentro dessa pasta estão os arquivos contendo as constantes da aplicação.
+    └── server                 # Arquivos contendo as configurações gerais do servidor da aplicação.
        ├── create-server.js    # Onde é criado o servidor com as configurações necessárias para iniciar o serviço,
-       |                                    # essa mesma configuração é utilizada para os testes de integração. 
-        ├── server.js               # Monta o servidor para uso dev e prod.
-        └── index.js                # E o Main.
+       |                       # essa mesma configuração é utilizada para os testes de integração. 
+        ├── server.js          # Monta o servidor para uso dev e prod.
+        └── index.js           # E o Main.
     
 ```
 
