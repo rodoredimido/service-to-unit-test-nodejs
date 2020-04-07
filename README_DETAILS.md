@@ -8,8 +8,7 @@ A principal funcionalidade da aplicação é se comunicar com serviços externos
 
 Para criar o web service foi utilizado o [Koa framework](https://koajs.com/) que facilita a criação de web services é incrivelmente pequeno, modular e poderoso.
 
-Alguns caracteristicas do Koa:
-
+#### Alguns caracteristicas do Koa:
 Livre de middlewares: Talvez isso pareça uma desvantagem, mas é o oposto, porque muitas vezes não precisamos de todo o pacote de recursos, isso nos permite ter um serviço rápido, podendo adicionar recursos conforme necessário.
 
 Adeus Callbacks: Koa funciona completamente bem com os novos recursos desde o ES6, que facilita o uso de `promises` e `async/await`, que melhoram a leitura do código e evita erros de retorno em funções.
@@ -36,21 +35,21 @@ Excelente desempenho: Comparado a outras estruturas, o koa está entre os mais r
 
 [Aqui](https://www.taniarascia.com/unit-testing-in-javascript/) temos um exemplo de testes unitários com Mocha.
 
-### Vantagens do testes unitarios 
+#### Vantagens do testes unitários 
 
-1. Fornece trabalho ágil: Como um procedimento ágil, permite detectar erros a tempo, para que você possa reescrever o código ou corrigir erros sem precisar voltar ao início e refazer o trabalho. Como os pequenos são feitos periodicamente e em embalagens pequenas. Tempo e custo decrescentes.
+1. Fornece trabalho ágil: Como um procedimento ágil, permite detectar erros a tempo, para que você possa reescrever o código ou corrigir erros sem precisar voltar ao início e refazer o trabalho. Como os testes são feitos periodicamente e em alterações pequenas, isso torna o tempo e custo decrescentes.
 
-2. Qualidade do código: Testando e detectando continuamente erros, quando o código é finalizado, é um código de qualidade limpo.
+2. Qualidade do código: Testar e detectar continuamente os erros, quando a alteração é finalizada o resultado é um código de qualidade e limpo.
 
-3. Detecte erros rapidamente: Diferentemente de outros processos, os testes de unidade nos permitem detectar erros rapidamente, analisamos o código por partes, realizando pequenos testes e, periodicamente, além disso, os testes podem ser realizados quantas vezes forem necessárias para obter o resultado ideal.
+3. Detectar erros rapidamente: Diferentemente de outros processos, os testes de unidade nos permitem detectar erros rapidamente(enquanto desenvolvemos), possibilitando a análise do código por partes, realizando pequenos testes, que periodicamente, podem ser executados quantas vezes forem necessárias para obter o resultado ideal.
 
-4. Facilita mudanças e favorece a integração: Os testes de unidade nos permitem modificar partes do código sem afetar o todo, simplesmente para poder solucionar os erros que encontramos ao longo do caminho. Os testes de unidade, divididos em blocos individuais, permitem a integração de novas contribuições para criar um código mais complexo ou atualizá-lo, dependendo do que o cliente exige.
+4. Facilita mudanças e favorece a integração: Os testes de unidade nos permitem modificar partes do código sem afetar o todo, pois auxilia na solução de erros que encontramos ao longo do desenvolvimento. Os testes de unidade, divididos em blocos individuais, permitem a integração de novas contribuições para criar um código mais complexo ou atualizá-lo, dependendo das necessidades.
 
-5. Forneça informações: Graças ao fluxo contínuo de informações e à superação de erros, uma grande quantidade de informações pode ser coletada para evitar futuros erros.
+5. Fornece informações úteis: Graças ao fluxo contínuo de informações e ao nível detalhado dos erros, uma grande quantidade de informações pode ser coletada para evitar futuros problemas.
 
-6. Processo de depuração: Testes de unidade ajudam no processo de depuração. Quando um erro ou bug é encontrado no código, é necessário apenas decompor o trecho de código testado. Essa é uma das principais razões pelas quais os testes de unidade são feitos em pequenos pedaços de código, simplificando bastante a tarefa de solução de problemas.
+6. Processo de depuração: Testes de unidade ajudam no processo de depuração. Quando um erro ocorre ou bug é encontrado no código, é necessário apenas decompor o trecho de código testado. Essa é uma das principais razões pelas quais os testes de unidade são feitos em pequenos pedaços de código, simplificando bastante a tarefa de solução de problemas.
 
-#### No diagrama a seguir é a montagens dos test unitarios Feitos neste sistema:
+#### O diagrama a seguir mostra a estruturação dos test unitários feitos neste sistema:
 
 ```
     .
@@ -60,25 +59,26 @@ Excelente desempenho: Comparado a outras estruturas, o koa está entre os mais r
     └── test                      # Testes unitários.
         ├── api                   # Test de integração.
         ├── controller            # Test unitarios para os controllers.
-        ├── expected              # resultados final do test.
-        ├── mocks                 # Fake recives dos serviços extesrnos.
-        └── helpers               # helpers de configuração para os test unitarios e o de integra;ão.
-            ├── create-server.js  # Monta o servidor fake para realizar os test de integração.
-            └── index.js          # Prepara as bibliotecas de de test unitarios para as variaveis globals
-                                  # para assim carregar apenas uma vez so.
+        ├── expected              # Resultados final do test.
+        ├── mocks                 # Arquivos com conteúdo estático dos serviços externos.
+        └── helpers               # Helpers de configuração para os testes unitários e os de integração.
+            ├── create-server.js  # Monta o servidor fake para realizar os testes de integração.
+            └── index.js          # Prepara as bibliotecas de testes unitários para as variáveis globais
+                                  # para assim carregar apenas uma vez através do Node modules.
 ```
 
-## Rodar os test unitarios
+## Execução dos testes unitários
 
-Para Verifiar a covertura do Codigo se usa a biblioteca [NYC](https://www.npmjs.com/package/nyc), onde a mesma e configurara para 
-para exportar o relatorio de covertura, onde depois de executar o test gera o relatorio na rota`coverage/lcov-report/index.html` 
+Para verificar a cobertura do código, foi usada a biblioteca [NYC](https://www.npmjs.com/package/nyc), que foi configurada para
+para exportar o relatório de cobertura após a executação dos testes.  
+O relatório é gerado no seguinte caminho: `coverage/lcov-report/index.html`
 
-#### Para Rodar os test:
+#### Para executar os testes:
 ```bash
-$ npm run test  # é para rodar so os test unitarios.
-$ npm run cover # é para rodar os test unitarios e verificar a covertura do codigo.
+$ npm run test  # Executa apenas os testes unitários.
+$ npm run cover # Executa os testes unitários e verifica a covertura do código.
 ```
-Assim estão confgurados os script no `package.json` para os testes:
+Os scripts de teste no `package.json` foram configurados da seguinte maneira:
 ```json
 {
   "script": {
