@@ -1,36 +1,39 @@
-const { Bristol } = require('bristol')
-const palin = require('palin')
+const winston = require('winston')
+const config = require('../../configs')
 
-let logger
-let config
-
-// eslint-disable-next-line complexity
-const init = (opts = {}) => {
-  config = {
-    nodeEnv: opts.nodeEnv || process.env.NODE_ENV,
-    prod: opts.prod ? {
-      file: (opts.prod.file) || 'server.log',
-      formatter: (opts.prod.formatter) || 'commonInfoModel',
-      lowestSeverity: (opts.prod.lowestSeverity) || 'warn'
-    } : {
-      file: 'server.log',
-      formatter: 'commonInfoModel',
-      lowestSeverity: 'warn'
-    }
+const options = {
+  file: {
+    filename: 'server.log',
+    maxsize: 5000000,
+    maxFiles: 3
+  },
+  console: {
+    level: 'info'
   }
-  logger = new Bristol()
-  config.nodeEnv === 'local' || config.nodeEnv === 'test' || config.nodeEnv === 'dev'
-    ? logger.addTarget('console').withFormatter(palin)
-    : logger.addTarget('file', { file: config.prod.file })
-      .withFormatter(config.prod.formatter)
-      .withLowestSeverity(config.prod.lowestSeverity)
-  return logger
 }
 
-const instance = () => logger || init()
+// eslint-disable-next-line new-cap
+const logger = new winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp({
+      format: 'YYYY-MM-DD HH:mm:ss'
+    }),
+    winston.format.json(),
+    winston.format.colorize()
+  ),
+  defaultMeta: { service: 'node_app_test' },
+  transports: [
+    new winston.transports.File(options.file)
+  ]
+})
 
-module.exports = {
-  get instance () { return instance() },
-  init,
-  get config () { return config }
+if (config.node_env === 'production') {
+  logger.add(new winston.transports.Console(options.console))
+} else {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }))
 }
+
+module.exports = logger
