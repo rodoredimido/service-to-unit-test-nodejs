@@ -8,7 +8,7 @@ A principal funcionalidade da aplicação é se comunicar com serviços externos
 
 Para criar o web service foi utilizado o [KoaJs](https://koajs.com/), um framework que facilita a criação de web services, é incrivelmente pequeno, modular e poderoso.
 
-#### Alguns caracteristicas do Koa:
+### Alguns caracteristicas do Koa:
 **Livre de middlewares:** Talvez isso pareça uma desvantagem, mas é o oposto, porque muitas vezes não precisamos de todo o pacote de recursos, isso nos permite ter um serviço rápido, podendo adicionar recursos conforme necessário.
 
 **Adeus callbacks:** Koa funciona completamente bem com os novos recursos desde o ES6, que facilita o uso de `promises` e `async/await`, que melhoram a leitura do código e evita erros de retorno em funções.
@@ -19,7 +19,7 @@ Para criar o web service foi utilizado o [KoaJs](https://koajs.com/), um framewo
 
 **Excelente desempenho:** Comparado a outras estruturas, o koa está entre os mais rápidos, o que não seria possível sem um núcleo simples e leve.
 
-#### Criando o Servidor
+### Criando o Servidor
 ```
     .
     ├── configs                # Dentro dessa pasta estão os arquivos contendo as constantes da aplicação.
@@ -35,7 +35,7 @@ Para criar o web service foi utilizado o [KoaJs](https://koajs.com/), um framewo
 
 [Aqui](https://www.taniarascia.com/unit-testing-in-javascript/) temos um exemplo de testes unitários com Mocha.
 
-#### Vantagens do testes unitários 
+### Vantagens do testes unitários 
 
 **1. Fornece trabalho ágil:** Como um procedimento ágil, permite detectar erros a tempo, para que você possa reescrever o código ou corrigir erros sem precisar voltar ao início e refazer o trabalho. Como os testes são feitos periodicamente e em alterações pequenas, isso torna o tempo e custo decrescentes.
 
@@ -49,7 +49,7 @@ Para criar o web service foi utilizado o [KoaJs](https://koajs.com/), um framewo
 
 **6. Processo de depuração:** Testes de unidade ajudam no processo de depuração. Quando um erro ocorre ou bug é encontrado no código, é necessário apenas decompor o trecho de código testado. Essa é uma das principais razões pelas quais os testes de unidade são feitos em pequenos pedaços de código, simplificando bastante a tarefa de solução de problemas.
 
-#### O diagrama a seguir mostra a estruturação dos test unitários feitos neste sistema:
+### O diagrama a seguir mostra a estruturação dos test unitários feitos neste sistema:
 
 ```
     .
