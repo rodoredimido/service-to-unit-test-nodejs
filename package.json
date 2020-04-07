@@ -9,7 +9,8 @@
     "file": "*@(.spec.js)"
   },
   "scripts": {
-    "start": "nodemon server/index.js",
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js",
     "test": "cross-env NODE_ENV=test; mocha --require test/helpers \"@(src|test)/**/*@(.spec.js)\" --timeout 5000 --exit",
     "cover": "nyc npm test",
     "lint": "eslint --fix --ext .json,.js,.spec.js src test server"
@@ -33,7 +34,8 @@
     "node-fetch": "^2.6.0",
     "palin": "^2.3.0",
     "request": "^2.88.2",
-    "request-promise": "^4.2.5"
+    "request-promise": "^4.2.5",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
     "chai": "^4.2.0",
