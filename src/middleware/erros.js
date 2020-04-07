@@ -28,7 +28,8 @@ const errorCreator = (logger = { error: {} }, customMessage = {}) => {
       } else if (err.desciptor) {
         response.body = { ...response.body, ...err.desciptor }
       }
-      Object.assign(ctx, response)
+      ctx.status = response.status
+      ctx.body = response.body
     }
   }
   return errorMiddleware
