@@ -8,7 +8,7 @@ A principal funcionalidade da aplicação é se comunicar com serviços externos
 
 Para criar o web service foi utilizado o [KoaJs](https://koajs.com/), um framework que facilita a criação de web services, é incrivelmente pequeno, modular e poderoso.
 
-### Alguns caracteristicas do Koa:
+### Alguns características do Koa:
 **Livre de middlewares:** Talvez isso pareça uma desvantagem, mas é o oposto, porque muitas vezes não precisamos de todo o pacote de recursos, isso nos permite ter um serviço rápido, podendo adicionar recursos conforme necessário.
 
 **Adeus callbacks:** Koa funciona completamente bem com os novos recursos desde o ES6, que facilita o uso de `promises` e `async/await`, que melhoram a leitura do código e evita erros de retorno em funções.
